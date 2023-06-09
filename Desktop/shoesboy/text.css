@@ -1,0 +1,43 @@
+/* style.css */
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 헤더 스타일 */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  /* 메인 콘텐츠 스타일 */
+  main {
+    padding: 20px;
+  }
+  
+  /* 푸터 스타일 */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  #c2 {
+    background-color: #D5D8B5;
+  }
+
+#im{
+    background-color: #F7E1AE;
+}
+#sk {
+   font-size:30px;
+}   

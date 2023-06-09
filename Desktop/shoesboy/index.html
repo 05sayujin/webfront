@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <style>
+    #profile-container {
+      position: relative;
+      cursor: pointer;
+    }
+
+    #profile-img {
+      width: 250px;
+      height: auto;
+      transition: opacity 0.5s;
+    }
+
+    #profile-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background-color: #F6FFDE;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    #profile-container.active #profile-img {
+      opacity: 0;
+    }
+
+    #profile-container.active #profile-info {
+      opacity: 1;
+    }
+
+    .skill-card {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .skill-img {
+      width: 250px;
+      height: auto;
+      transition: opacity 0.5s;
+    }
+
+    .skill-card.active .skill-img {
+      opacity: 0;
+    }
+
+    .skill-card.active .skill-description {
+      opacity: 1;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shose boy</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    function toggleProfile() {
+      var profileContainer = document.getElementById("profile-container");
+      if (profileContainer.classList.contains("active")) {
+        profileContainer.classList.remove("active");
+      } else {
+        profileContainer.classList.add("active");
+      }
+    }
+
+    function toggleSkill(cardId, descriptionId, description) {
+      var skillCard = document.getElementById(cardId);
+      var skillDescription = document.getElementById(descriptionId);
+      if (skillCard.classList.contains("active")) {
+        skillCard.classList.remove("active");
+        skillDescription.style.opacity = 0;
+      } else {
+        skillCard.classList.add("active");
+        skillDescription.innerHTML = description;
+        skillDescription.style.opacity = 1;
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <h1>사유진</h1>
+    <nav>
+      <a id="dd" href="https://www.instagram.com/yujin6158/"><img src="insta-logo.avif" alt="Instagram"></a>
+      <a id="dd" href="https://github.com/05sayujin"><img src="git-looo.png" alt="GitHub"></a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>profile</h1>
+      <div id="profile-container" onclick="toggleProfile()">
+        <img id="profile-img" src="pro.png" alt="Profile">
+        <div id="profile-info">
+          <p>
+            용인초 99회 졸업 <br>
+            용천중 몇회 졸업인지 모름<br>
+            덕영고 재학중 <br>
+          </p>
+          <p>
+            안녕하세요! 사유진입니다.
+          </p>
+          <p>
+            저는 웹 개발과 인공지능에 관심이 많고 HTML, CSS, JavaScript, python을 주로 다룹니다<dr>
+      
+          </p>
+          <p>
+            프론트엔드 기술에 대해 계속해서 공부하고 성장하고 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h1>Skills</h1>
+      <li>HTML</li>
+      <div class="skill-card" id="html-card" onclick="toggleSkill('html-card', 'html-description', 'It is a type of basic web language used to create web documents. Developed for text.');">
+        <img class="skill-img" src="HTML-logo.jpeg" alt="html">
+        <ul class="skill-item">
+          
+        </ul>
+        <p id="html-description" class="skill-description" style="float:right;margin:auto;font-size:20px;text-transform:capitalize;"></p>
+      </div><br>
+      <li>CSS</li>
+      <div class="skill-card" id="css-card" onclick="toggleSkill('css-card', 'css-description', 'A style sheet that pre-stores the overall style of a web document.');">
+        <img class="skill-img" src="css-logo.png" alt="css">
+        <ul class="skill-item">
+          
+        </ul>
+        <p id="css-description" class="skill-description" style="float:right;margin:0; font-size:20px; text-transform: capitalize;"></p>
+      </div><br>
+      <li>Python</li>
+      <div class="skill-card" id="python-card" onclick="toggleSkill('python-card', 'python-description', 'It is used not only in web development but also in various fields such as data analysis, machine learning, graphics, and academic research.');">
+        <img class="skill-img" src="Python-logo.png" alt="python">
+        <ul class="skill-item">
+         
+        </ul>
+        <p id="python-description" class="skill-description" style="float:right;margin:0; font-size:20px; text-transform: capitalize;"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Shose Boy. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
